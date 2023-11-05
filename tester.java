@@ -1,14 +1,10 @@
-// Java program to illustrate
-// Randomised Quick Sort 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.*;
 
 import sortingAlgorithms.RandomizedQsort;
-import sortingAlgorithms.SelectionSort;
 import sortingAlgorithms.ClusteredBIS;
-import sortingAlgorithms.MergeSort;
 
 class Tester {
 	/* A utility function to print array of size n */
@@ -32,8 +28,6 @@ class Tester {
     public static void test(String fileName, int size) throws Exception {
         int arr[] = readFile(fileName, size);
         int arr2[] = arr.clone();
-        int arr3[] = arr.clone();
-        int arr4[] = arr.clone();
         int n = arr.length;
 
         double qs_begin = System.nanoTime();
@@ -49,21 +43,8 @@ class Tester {
         double cbis_end = System.nanoTime();
         double cbis_time = (cbis_end-cbis_begin) / 1000000;
         System.out.println("CBIS: "+ cbis_time +" milli seconds");
-
-        double ss_begin = System.nanoTime();
-        SelectionSort.sort(arr3);
-        double ss_end = System.nanoTime();
-        double ss_time = (ss_end-ss_begin) / 1000000;
-        System.out.println("Selection Sort: "+ ss_time +" milli seconds");
-
-        double ms_begin = System.nanoTime();
-        MergeSort.sort(arr4, 0, n-1);
-        double ms_end = System.nanoTime();
-        double ms_time = (ms_end-ms_begin) / 1000000;
-        System.out.println("Merge Sort: "+ ms_time +" milli seconds");
     }
 
-	// Driver Code 
 	public static void main(String args[]) throws Exception {   
         test("small_sorted.txt", 200);
         test("medium_sorted.txt", 2000);

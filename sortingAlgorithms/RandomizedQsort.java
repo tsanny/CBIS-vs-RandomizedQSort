@@ -2,13 +2,9 @@ package sortingAlgorithms;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-// Java program to illustrate
-// Randomised Quick Sort 
 import java.util.*; 
 
-public class RandomizedQsort 
-{	 
- 
+public class RandomizedQsort {	 
     // Function to swap two elements in the array
     static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
